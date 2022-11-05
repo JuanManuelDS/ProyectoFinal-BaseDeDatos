@@ -1,11 +1,11 @@
-<mxfile host="app.diagrams.net" modified="2022-11-05T14:37:12.452Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="j4vxtw5gZaR-JLoOwl8Q" version="20.5.2" type="github" pages="3">
+<mxfile host="app.diagrams.net" modified="2022-11-05T14:42:49.210Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/107.0.0.0 Safari/537.36" etag="nIRK7wRF_w3bkH3JVC9X" version="20.5.2" type="github" pages="3">
   <diagram id="QbepOg8Fn-94noEUAbvE" name="Entidad Relación">
     <mxGraphModel dx="2500" dy="979" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="VFzci1_2qIrmE6VfWUru-1" value="Usuario" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;align=center;fontSize=14;" parent="1" vertex="1">
-          <mxGeometry x="610" y="120" width="160" height="116" as="geometry" />
+          <mxGeometry x="460" y="120" width="160" height="116" as="geometry" />
         </mxCell>
         <mxCell id="VFzci1_2qIrmE6VfWUru-2" value="#email" style="text;strokeColor=none;fillColor=none;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontSize=12;fontStyle=1" parent="VFzci1_2qIrmE6VfWUru-1" vertex="1">
           <mxGeometry y="26" width="160" height="30" as="geometry" />
