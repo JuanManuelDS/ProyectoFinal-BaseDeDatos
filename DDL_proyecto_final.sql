@@ -34,7 +34,7 @@ DROP TABLE IF EXISTS otros;
 CREATE TABLE otros (
 id INT AUTO_INCREMENT,
 descripcion TEXT,
-curriculum VARCHAR(100) REFERENCES curriculums(nombre_archivo) ON DELETE CASCADE ON UPDATE CASCADE,
+curriculum int REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS datos;
@@ -48,7 +48,7 @@ email VARCHAR(155),
 telefono VARCHAR(25),
 codigo_postal VARCHAR (10),
 ciudad VARCHAR (100),
-curriculum VARCHAR(100) REFERENCES curriculums(nombre_archivo) ON DELETE CASCADE ON UPDATE CASCADE,
+curriculum int REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS experiencia_laboral;
@@ -59,7 +59,7 @@ puesto VARCHAR(120),
 descripcion TEXT,
 fecha_inicio DATE,
 fecha_fin DATE,
-curriculum VARCHAR(100) REFERENCES curriculums(nombre_archivo) ON DELETE CASCADE ON UPDATE CASCADE,
+curriculum int REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS estudios;
@@ -70,7 +70,7 @@ titulo VARCHAR(120),
 descripcion TEXT,
 fecha_inicio DATE,
 fecha_fin DATE,
-curriculum VARCHAR(100) REFERENCES curriculums(nombre_archivo) ON DELETE CASCADE ON UPDATE CASCADE,
+curriculum int REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS idiomas;
@@ -80,7 +80,7 @@ id INT AUTO_INCREMENT,
 idioma VARCHAR(100),
 nivel_escrito VARCHAR(40),
 nivel_oral VARCHAR(40),
-curriculum VARCHAR(100) REFERENCES curriculums(nombre_archivo) ON DELETE CASCADE ON UPDATE CASCADE,
+curriculum int REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS listado;
@@ -96,7 +96,7 @@ CREATE TABLE entradas (
 id INT AUTO_INCREMENT,
 nombre VARCHAR(100),
 unidades MEDIUMINT,
-listado VARCHAR(100) REFERENCES listado(nombre_archivo) ON DELETE CASCADE ON UPDATE CASCADE,
+listado int REFERENCES listado(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS cartas_restaurantes;
@@ -112,7 +112,7 @@ CREATE TABLE secciones (
 id INT AUTO_INCREMENT,
 nombre VARCHAR(100),
 imagen VARCHAR(255),
-carta VARCHAR(100) REFERENCES cartas_restaurantes(nombre_archivo) ON DELETE CASCADE ON UPDATE CASCADE,
+carta int REFERENCES cartas_restaurantes(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS platos;
@@ -132,7 +132,7 @@ id INT AUTO_INCREMENT,
 nombre VARCHAR(100),
 imagen VARCHAR(255),
 precio_menu MEDIUMINT,
-nombre_archivo VARCHAR(100) REFERENCES cartas_restaurantes(nombre_archivo) ON DELETE CASCADE ON UPDATE CASCADE,
+carta int REFERENCES cartas_restaurantes(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS plato_menus;
