@@ -15,18 +15,21 @@ PRIMARY KEY (id));
 DROP TABLE IF EXISTS plantillas;
 
 CREATE TABLE plantillas (
-id int auto_increment,
+id INT AUTO_INCREMENT,
 nombre_archivo VARCHAR(100),
 firma VARCHAR(500),
 usuario int REFERENCES usuarios(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
+/*---------------------------CURRICULUMS---------------------------------*/
+
 DROP TABLE IF EXISTS curriculums;
 
 CREATE TABLE curriculums (
-id int REFERENCES plantillas(id) ON DELETE CASCADE ON UPDATE CASCADE,
+id INT AUTO_INCREMENT, 
 texto_presentacion TEXT,
 imagen VARCHAR(250),
+plantilla INT REFERENCES plantillas(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS otros;
@@ -83,10 +86,13 @@ nivel_oral VARCHAR(40),
 curriculum int REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
+/*---------------------------LISTADOS---------------------------------*/
+
 DROP TABLE IF EXISTS listado;
 
 CREATE TABLE listado (
-id int REFERENCES plantillas(id) ON DELETE CASCADE ON UPDATE CASCADE,
+id INT AUTO_INCREMENT,
+plantilla INT REFERENCES plantillas(id) ON DELETE CASCADE ON UPDATE CASCADE,
 titulo_lista VARCHAR(100),
 PRIMARY KEY (id));
 
@@ -99,10 +105,13 @@ unidades MEDIUMINT,
 listado int REFERENCES listado(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
+/*---------------------------CARTAS RESTAURANTES---------------------------------*/
+
 DROP TABLE IF EXISTS cartas_restaurantes;
 
 CREATE TABLE cartas_restaurantes (
-id int REFERENCES plantillas(id) ON DELETE CASCADE ON UPDATE CASCADE,
+id INT AUTO_INCREMENT,
+plantilla INT REFERENCES plantillas(id) ON DELETE CASCADE ON UPDATE CASCADE,
 nombre_restaurante VARCHAR(100),
 PRIMARY KEY (id));
 
@@ -112,7 +121,7 @@ CREATE TABLE secciones (
 id INT AUTO_INCREMENT,
 nombre VARCHAR(100),
 imagen VARCHAR(255),
-carta int REFERENCES cartas_restaurantes(id) ON DELETE CASCADE ON UPDATE CASCADE,
+carta INT REFERENCES cartas_restaurantes(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS platos;
