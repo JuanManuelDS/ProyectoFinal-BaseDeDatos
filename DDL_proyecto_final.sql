@@ -7,8 +7,8 @@ DROP TABLE IF EXISTS usuarios;
 
 CREATE TABLE usuarios (
 id int auto_increment,
-email VARCHAR(100),
-nombre_usuario VARCHAR(100),
+email VARCHAR(100) UNIQUE,
+nombre_usuario VARCHAR(100) UNIQUE,
 contrasena VARCHAR(100),
 PRIMARY KEY (id));
 
