@@ -37,7 +37,7 @@ DROP TABLE IF EXISTS otros;
 CREATE TABLE otros (
 id INT AUTO_INCREMENT,
 descripcion TEXT,
-curriculum int REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
+curriculum INT REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS datos;
@@ -62,7 +62,7 @@ puesto VARCHAR(120),
 descripcion TEXT,
 fecha_inicio DATE,
 fecha_fin DATE,
-curriculum int REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
+curriculum INT REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS estudios;
@@ -73,7 +73,7 @@ titulo VARCHAR(120),
 descripcion TEXT,
 fecha_inicio DATE,
 fecha_fin DATE,
-curriculum int REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
+curriculum INT REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 DROP TABLE IF EXISTS idiomas;
@@ -83,7 +83,7 @@ id INT AUTO_INCREMENT,
 idioma VARCHAR(100),
 nivel_escrito VARCHAR(40),
 nivel_oral VARCHAR(40),
-curriculum int REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
+curriculum INT REFERENCES curriculums(id) ON DELETE CASCADE ON UPDATE CASCADE,
 PRIMARY KEY (id));
 
 /*---------------------------LISTADOS---------------------------------*/
